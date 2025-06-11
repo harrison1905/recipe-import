@@ -20,7 +20,7 @@ export OPENAI_API_KEY='DEIN_API_KEY'
 4. App starten:
 python app.py
 
-5. Im Browser `http://localhost:5000` öffnen und Rezept generieren.
+5. Im Browser `http://localhost:5001` öffnen und Rezept generieren.
 
 ## Nutzung mit Cookidoo
 
