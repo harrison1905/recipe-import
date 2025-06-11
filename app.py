@@ -30,7 +30,7 @@ def generate_recipe():
     name = request.args.get("name", "Ezme Dip")
     prompt = REZEPT_TEMPLATE.format(name=name)
 
-    response = openai.ChatCompletion.create(
+    response = openai.chat.completions.create(
         model="gpt-4o-mini",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.7,
@@ -40,7 +40,6 @@ def generate_recipe():
     try:
         json_part, html_part = text.split("\n\n", 1)
     except ValueError:
-        # Falls kein Doppel-Block, alles als HTML anzeigen
         html_part = text
 
     return render_template_string(html_part)
@@ -56,4 +55,4 @@ def home():
     """
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5001, debug=True)
